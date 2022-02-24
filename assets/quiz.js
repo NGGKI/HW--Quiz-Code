@@ -136,7 +136,7 @@ function handleFormSubmit(event) {
 
     var userName = $('input[name="name-input"]').val()
 
-    console.log(userName);
+    /* console.log(userName); */
 
     if (!userName){
           console.log('No name was added');
@@ -147,7 +147,7 @@ function handleFormSubmit(event) {
     /* document.getElementById('scorelist').innerHTML = `${userName}` */
 
 
-    console.log(scoreList);
+    /* console.log(scoreList); */
     $('input[name="name-input"]').val('');
 }
 
