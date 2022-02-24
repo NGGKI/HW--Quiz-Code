@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Quiz Code</title>
-  </head>
-  <body>
-    <div class="container">
-        <div id="para">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Quiz Code</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="para">
       <h2>Do you like Avenger End Game?</h2>
       <P>Let give yourself a test, eh?</P>
       <p>The rules are: </p>
@@ -15,27 +17,35 @@
       <li>10 seconds deducted from wrong answer</li>
       <li>Remaining seconds are your scores</li>
       <p>Good luck!</p>
-              </div>
-      </p>
-      <button id="start">Start Quiz!</button>
-      <div id="quiz" style="display: none">
-        <div id="question"></div>
-        <div id="qImg"></div>
-        <div id="choices">
-          <button class="choice" id="A" onclick="checkAnswer('A')"></button>
-          <button class="choice" id="B" onclick="checkAnswer('B')"></button>
-          <button class="choice" id="C" onclick="checkAnswer('C')"></button>
-        </div>
-        <div id="timer">Time</div>
-        <div id="progress"></div>
-      </div>
-      <div id="scoreContainer" style="display: none">
-      <h2>Highest Score</h2>
-        <div class="score"></div>
-        <button id="restart">Restart</button>
-        <button id="clear">Clear scores</button>
-      </div>
     </div>
-    <script src="./assets/quiz.js"></script>
-  </body>
+    </p>
+    <button id="start">Start Quiz!</button>
+    <div id="quiz" style="display: none">
+      <div id="question"></div>
+      <div id="qImg"></div>
+      <div id="choices">
+        <button class="choice" id="A" onclick="checkAnswer('A')"></button>
+        <button class="choice" id="B" onclick="checkAnswer('B')"></button>
+        <button class="choice" id="C" onclick="checkAnswer('C')"></button>
+      </div>
+      <div id="timer">Time</div>
+      <div id="progress"></div>
+    </div>
+
+    <div id="scoreContainer" style="display: none">
+      <h2>**Highest Score**</h2>
+      <p id="score"></p>
+      <ul id="scorelist"></ul>
+      <form id="scoreform">
+        <input type="text" class="form-input w-100" name="name-input"
+          placeholder="Enter nickname" />          
+        <button class="btn btn-info" id="savebtn">Save</button>
+      </form>
+</div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="./assets/quiz.js"></script>
+</body>
+
 </html>

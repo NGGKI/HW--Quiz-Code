@@ -8,7 +8,8 @@ const choiceB = document.getElementById("B");
 const choiceC = document.getElementById("C");
 const timer = document.getElementById("timer");
 const scoreDiv = document.getElementById("scoreContainer");
-const myScore = document.querySelector(".score");
+const myScore = document.getElementById("score");
+
 const restartGame = document.getElementById("restart");
 
 // create our questions
@@ -120,8 +121,39 @@ function scoreRender() {
     scoreDiv.style.display = "block";
     quiz.style.display = "none";
     const textTimeRemaining = `Your score is ${sec}`
-myScore.textContent = textTimeRemaining + ' points'
-    }
+    myScore.textContent = textTimeRemaining + ' points'
+}
+
+
+// create function to handle the form
+var scoreForm = document.getElementById("scoreform");
+var scoreList = document.getElementById("scorelist");
+var saveBtn = document.getElementById('savebtn');
+
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+
+    var userName = $('input[name="name-input"]').val()
+
+    console.log(userName);
+
+    if (!userName){
+          console.log('No name was added');
+     return;}
+
+    /* scoreList.append('<li>' + userName + '</li>'); */
+    scoreList.innerHTML = `<li> ${userName}:  ${sec} points </li>`
+    /* document.getElementById('scorelist').innerHTML = `${userName}` */
+
+
+    console.log(scoreList);
+    $('input[name="name-input"]').val('');
+}
+
+
+saveBtn.addEventListener('click', handleFormSubmit);
+
 
 // reset the game
 
