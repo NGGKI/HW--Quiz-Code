@@ -6,9 +6,9 @@ const qImg = document.getElementById("qImg");
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
 const choiceC = document.getElementById("C");
-const counter = document.getElementById("counter");
 const timer = document.getElementById("timer");
 const scoreDiv = document.getElementById("scoreContainer");
+const myScore = document.querySelector(".score");
 
 // create our questions
 let questions = [
@@ -37,9 +37,7 @@ let questions = [
 
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
-let count = 0;
-let TIMER;
-let score = 0;
+
 
 // render a question
 function renderQuestion() {
@@ -70,12 +68,23 @@ function renderProgress() {
     }
 }
 
+//timer
+var sec = 50;
+function startTimer() {
+    window.countTimer = setInterval(function () {
+        sec--;
+        document.getElementById("timer").innerHTML = sec;
+        if (sec <= 0) {
+            clearInterval(window.countTimer);
+            alert("you lost!");
+        }
+    }, 1000);
+}
 // checkAnwer
 
 function checkAnswer(answer) {
     if (answer == questions[runningQuestion].correct) {
         // answer is correct
-        score++;
         // change progress color to green
         answerIsCorrect();
     } else {
@@ -89,9 +98,8 @@ function checkAnswer(answer) {
         renderQuestion();
     } else {
         // end the quiz and show the score
-        clearInterval(timer);
+        clearInterval(window.countTimer);
         scoreRender();
-        console.log("chay roi");
     }
 }
 
@@ -103,28 +111,21 @@ function answerIsCorrect() {
 // answer is Wrong
 function answerIsWrong() {
     document.getElementById(runningQuestion).style.backgroundColor = "#f00";
-    sec -= 12;
+    sec -= 10;
 }
 
 // score render
 function scoreRender() {
     scoreDiv.style.display = "block";
+    quiz.style.display = "none";
+    const textTimeRemaining = `Your score is ${sec}`
+myScore.textContent = textTimeRemaining + ' points'
+    }
 
-}
 
 
-//timer
-var sec = 40;
-function startTimer() {
-    var timer = setInterval(function () {
-        sec--;
-        document.getElementById('timer').innerHTML = sec;
-        if (sec <= 0) {
-            clearInterval(timer);
-            alert("you lost!")
-        }
-    }, 1000);
-}
+
+
 
 
 

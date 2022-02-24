@@ -18,3 +18,28 @@
   text-align: center;
 }
 
+button {
+  background-color: rgb(42, 2, 80);
+  color: white;
+  height: 100px;
+  width: 150px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#question {
+  border-style: solid;
+  color: white;
+  background-color: rgb(42, 2, 80);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
