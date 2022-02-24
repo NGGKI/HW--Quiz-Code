@@ -9,6 +9,7 @@ const choiceC = document.getElementById("C");
 const timer = document.getElementById("timer");
 const scoreDiv = document.getElementById("scoreContainer");
 const myScore = document.querySelector(".score");
+const restartGame = document.getElementById("restart");
 
 // create our questions
 let questions = [
@@ -122,7 +123,10 @@ function scoreRender() {
 myScore.textContent = textTimeRemaining + ' points'
     }
 
+// reset the game
 
+
+// added the name for the score and view all the scores
 
 
 
