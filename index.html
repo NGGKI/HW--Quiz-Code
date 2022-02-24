@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Quiz Code</title>
+  </head>
+  <body>
+    <div class="container">
+        <div id="para">
+      <h2>Do you like Avenger End Game?</h2>
+      <p>
+        You have 40 seconds to answer 3 questions. Wrong answer will deduct 12
+        seconds. Remaining time will be your score. Good luck!
+        </div>
+      </p>
+      <button id="start">Start Quiz!</button>
+      <div id="quiz" style="display: none">
+        <div id="question"></div>
+        <div id="qImg"></div>
+        <div id="choices">
+          <button class="choice" id="A" onclick="checkAnswer('A')"></button>
+          <button class="choice" id="B" onclick="checkAnswer('B')"></button>
+          <button class="choice" id="C" onclick="checkAnswer('C')"></button>
+        </div>
+        <div id="timer">Time</div>
+        <div id="progress"></div>
+      </div>
+      <div id="scoreContainer" style="display: none"></div>
+    </div>
+    <script src="./assets/quiz.js"></script>
+  </body>
+</html>
