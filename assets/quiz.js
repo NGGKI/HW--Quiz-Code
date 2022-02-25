@@ -8,6 +8,17 @@ const choiceC = document.getElementById("C");
 const timer = document.getElementById("timer");
 const scoreDiv = document.getElementById("scoreContainer");
 const myScore = document.getElementById("score");
+var scoreForm = document.getElementById("scoreform");
+var scoreList = document.getElementById("scorelist");
+var saveBtn = document.getElementById('savebtn');
+var scoreForm = document.getElementById('scoreform');
+var afterGame = document.getElementById('aftergame');
+var goBack = document.getElementById('goback')
+
+
+// create some variables
+var textInner = ""
+var saved = localStorage.getItem("saved")
 
 
 // create our questions
@@ -33,11 +44,9 @@ let questions = [
     }
 ];
 
-// create some variables
 
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
-
 
 // render a question
 function renderQuestion() {
@@ -84,12 +93,10 @@ function startTimer() {
 
 function checkAnswer(answer) {
     if (answer == questions[runningQuestion].correct) {
-        // answer is correct
-        // change progress color to green
+        
         answerIsCorrect();
     } else {
-        // answer is wrong
-        // change progress color to red
+        
         answerIsWrong();
     }
     count = 0;
@@ -105,12 +112,12 @@ function checkAnswer(answer) {
 
 // answer is correct
 function answerIsCorrect() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
+    document.getElementById('result').innerText = "Right!";
 }
 
 // answer is Wrong
 function answerIsWrong() {
-    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+    document.getElementById('result').innerText = "Wrongggg!";
     sec -= 10;
 }
 
@@ -124,16 +131,6 @@ function scoreRender() {
 
 
 // create function to handle the form
-var scoreForm = document.getElementById("scoreform");
-var scoreList = document.getElementById("scorelist");
-var saveBtn = document.getElementById('savebtn');
-var scoreForm = document.getElementById('scoreform');
-var viewScore = document.getElementById('viewscore');
-var afterGame = document.getElementById('aftergame')
-
-var textInner = ""
-var saved = localStorage.getItem("saved")
-
 function handleFormSubmit(event) {
     event.preventDefault();
 
@@ -151,24 +148,18 @@ function handleFormSubmit(event) {
     scoreList.innerHTML = textInner;
 
     /* console.log(scoreList); */
+
     $('input[name="name-input"]').val('');
 
     scoreForm.style.display = "none";
     afterGame.style.display = "block";
 }
 
-saveBtn.addEventListener('click', function (){
-   handleFormSubmit();
+saveBtn.addEventListener('click', handleFormSubmit);
 
+goBack.addEventListener('click', function(){
+document.location.reload(true)
 })
-
-
-
-
-// reset scorelist
-
-
-// added the name for the score and view all the scores
 
 
 
