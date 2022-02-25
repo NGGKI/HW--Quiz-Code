@@ -2,7 +2,6 @@
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
-const qImg = document.getElementById("qImg");
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
 const choiceC = document.getElementById("C");
@@ -10,7 +9,6 @@ const timer = document.getElementById("timer");
 const scoreDiv = document.getElementById("scoreContainer");
 const myScore = document.getElementById("score");
 
-const restartGame = document.getElementById("restart");
 
 // create our questions
 let questions = [
@@ -131,7 +129,7 @@ var scoreList = document.getElementById("scorelist");
 var saveBtn = document.getElementById('savebtn');
 var scoreForm = document.getElementById('scoreform');
 var viewScore = document.getElementById('viewscore');
-
+var afterGame = document.getElementById('aftergame')
 
 var textInner = ""
 var saved = localStorage.getItem("saved")
@@ -156,22 +154,18 @@ function handleFormSubmit(event) {
     $('input[name="name-input"]').val('');
 
     scoreForm.style.display = "none";
-    
+    afterGame.style.display = "block";
 }
 
-function displayScore() {
+saveBtn.addEventListener('click', function (){
+   handleFormSubmit();
 
-
-}
-
-
-
-saveBtn.addEventListener('click', handleFormSubmit)
+})
 
 
 
 
-// reset the game
+// reset scorelist
 
 
 // added the name for the score and view all the scores
