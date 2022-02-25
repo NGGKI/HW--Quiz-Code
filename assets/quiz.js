@@ -129,7 +129,12 @@ function scoreRender() {
 var scoreForm = document.getElementById("scoreform");
 var scoreList = document.getElementById("scorelist");
 var saveBtn = document.getElementById('savebtn');
+var scoreForm = document.getElementById('scoreform');
+var viewScore = document.getElementById('viewscore');
 
+
+var textInner = ""
+var saved = localStorage.getItem("saved")
 
 function handleFormSubmit(event) {
     event.preventDefault();
@@ -138,27 +143,41 @@ function handleFormSubmit(event) {
 
     /* console.log(userName); */
 
-    if (!userName){
-          console.log('No name was added');
-     return;}
+    if (!userName) {
+        alert('Enter your name, pleassssse!');
+        return;
+    }
 
-    /* scoreList.append('<li>' + userName + '</li>'); */
-    scoreList.innerHTML = `<li> ${userName}:  ${sec} points </li>`
-    /* document.getElementById('scorelist').innerHTML = `${userName}` */
+    textInner += `<li> ${userName}: ${sec} points </li>`;
 
+    scoreList.innerHTML = textInner;
 
     /* console.log(scoreList); */
     $('input[name="name-input"]').val('');
+
+    scoreForm.style.display = "none";
+    
+}
+
+function displayScore() {
+
+
 }
 
 
-saveBtn.addEventListener('click', handleFormSubmit);
+
+saveBtn.addEventListener('click', handleFormSubmit)
+
+
 
 
 // reset the game
 
 
 // added the name for the score and view all the scores
+
+
+
 
 
 
