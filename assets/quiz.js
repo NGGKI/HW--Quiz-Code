@@ -31,14 +31,14 @@ let questions = [
         correct: "C",
     },
     {
-        question: "What does CSS stand for?",
+        question: "Who was actor in Captain American role?",
         choiceA: "Chris Evans",
         choiceB: "Daniel Craig",
         choiceC: "Jim Carrey",
         correct: "A",
     },
     {
-        question: "What does JS stand for?",
+        question: "Who said I love you, 3000?",
         choiceA: "Pepper Potts",
         choiceB: "Tony Stark",
         choiceC: "Morgan Stark",
