@@ -5,6 +5,7 @@ This is an Quiz App for studying.
 
 You can review my App with vanila Javascript at link: https://nggki.github.io/HW-Quiz-Code/
 
+
 1. Mainpage
 <img width="512" alt="main page" src="https://user-images.githubusercontent.com/99234927/155858135-fa753830-1f1a-4133-acf4-9b737fcd20b6.PNG">
 
@@ -18,4 +19,3 @@ You can review my App with vanila Javascript at link: https://nggki.github.io/HW
 4. Reset score
 <img width="714" alt="reset score" src="https://user-images.githubusercontent.com/99234927/155858157-00602e1d-4845-4a47-a55b-17b49877cabb.PNG">
 
-Thank you for taking the time to review my code. Due to limited time, i am still working on it until the product is finished.
